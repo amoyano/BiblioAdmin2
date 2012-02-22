@@ -142,6 +142,64 @@ public class PrestamoManager extends DBManager
            return b;
         }
 
+        
+        public Boolean prestamoEnSala(Socio socio, Libro libro){
+           Boolean b = false; 
+            try {
+                if(libro.cantidadEjemplaresDisponibles > 0
+             && noTieneSolicitadoElLibro(socio, libro) && noExistenReservasParaEseDia(libro)
+               && noTieneMasDeTresPrestamos(libro, socio) && noEstaDadoDeBaja(libro)) {
+               Prestamo prestamo = new Prestamo();
+               libro.cantidadEjemplaresDisponibles--;
+               prestamo.libro = libro;
+               prestamo.enSala = true;
+               prestamo.reservado = false;
+               prestamo.socio = socio;
+               prestamo.fechaEntrega = new Date();
+               saveOrUpdate(libro);
+               saveOrUpdate(prestamo);
+               
+               b = true;
+                }     
+           }catch (Exception e)
+            {
+			e.printStackTrace();
+			b = false;
+            }
+           
+           
+
+           return b;
+        }
+        public Boolean prestamoReserva(Socio socio, Libro libro){
+           Boolean b = false; 
+            try {
+                if(libro.cantidadEjemplaresDisponibles > 0
+             && noTieneSolicitadoElLibro(socio, libro) && noExistenReservasParaEseDia(libro)
+               && noTieneMasDeTresPrestamos(libro, socio) && noEstaDadoDeBaja(libro)) {
+               Prestamo prestamo = new Prestamo();
+               libro.cantidadEjemplaresDisponibles--;
+               prestamo.libro = libro;
+               prestamo.enSala = false;
+               prestamo.reservado = true;
+               prestamo.socio = socio;
+               prestamo.fechaEntrega = new Date();
+               saveOrUpdate(libro);
+               saveOrUpdate(prestamo);
+               
+               b = true;
+                }     
+           }catch (Exception e)
+            {
+			e.printStackTrace();
+			b = false;
+            }
+           
+           
+
+           return b;
+        }
+        
 
 	public boolean devolverEjemplar(Socio socio, Libro libro)
 	{

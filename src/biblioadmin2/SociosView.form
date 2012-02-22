@@ -453,8 +453,9 @@
                               <Component id="txtDNIBuscar" min="-2" pref="164" max="-2" attributes="1"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnBuscarSocio" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtEstado" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -467,6 +468,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="pnlDatosBuscar" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="69" max="32767" attributes="0"/>
                   </Group>
@@ -480,6 +482,7 @@
                               <Component id="btnBuscarSocio" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblDNI2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtDNIBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblDNI" min="-2" max="-2" attributes="0"/>
@@ -642,9 +645,9 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                           <Component id="btnModificarSocio" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                           <Component id="btnEliminarSocio" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -716,8 +719,8 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton4" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="btnModificarSocio" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                               <Component id="btnEliminarSocio" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="btnModificarSocio" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="154" max="32767" attributes="0"/>
                       </Group>
@@ -890,6 +893,13 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="txtEstado">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="txtEstado.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="txtEstado.text"/>
+                <Property name="name" type="java.lang.String" value="txtEstado" noResource="true"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

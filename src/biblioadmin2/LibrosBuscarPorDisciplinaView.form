@@ -118,6 +118,9 @@
           <Properties>
             <Property name="name" type="java.lang.String" value="listLibros" noResource="true"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="listLibros.setCellRenderer(new LibroRenderer());"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

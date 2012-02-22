@@ -12,6 +12,7 @@
 package biblioadmin2;
 
 import com.db4o.ObjectSet;
+import javax.swing.JOptionPane;
 import locators.ModelLocator;
 import managers.LibroManager;
 import models.Libro;
@@ -244,8 +245,17 @@ public class LibrosModificarView extends javax.swing.JFrame {
         libro.editorial = this.txtEditorialLibro.getText();
         libro.titulo = this.txtTituloLibro.getText();
         libro.disciplina = this.txtDisciplinaLibro.getText();
-        LibroManager.getInstance().saveOrUpdate(libro);
-       
+      
+        Boolean b =  LibroManager.getInstance().saveOrUpdate(libro);
+      
+        if(b){
+           JOptionPane.showMessageDialog(this, "Se modifico el libro");
+
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(this, "No se pudo modificar el libro");
+       }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

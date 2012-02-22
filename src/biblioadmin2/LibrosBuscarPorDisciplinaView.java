@@ -10,7 +10,7 @@
  */
 
 package biblioadmin2;
-
+import biblioadmin2.renderers.LibroRenderer;
 import com.db4o.ObjectSet;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
@@ -66,6 +66,7 @@ public class LibrosBuscarPorDisciplinaView extends javax.swing.JFrame {
 
         listLibros.setName("listLibros"); // NOI18N
         jScrollPane2.setViewportView(listLibros);
+        listLibros.setCellRenderer(new LibroRenderer());
 
         jButton3.setAction(actionMap.get("cancelar")); // NOI18N
         jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N

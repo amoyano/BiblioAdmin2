@@ -15,6 +15,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Date;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import locators.ModelLocator;
 import managers.PrestamoManager;
 import models.Prestamo;
@@ -288,14 +289,17 @@ public class PrestamoPrestamosView extends javax.swing.JFrame {
         prestamo.fechaEntrega = new Date();
         prestamo.libro = ModelLocator.getInstance().libroPrestamo;
         prestamo.socio = ModelLocator.getInstance().socioPrestamo;
-        Boolean prestamoHecho = PrestamoManager.getInstance().prestamo(prestamo.socio,prestamo.libro);
-            if(prestamoHecho){
-                System.out.println("El prestamo se realizo correctamente");
-            }
-            else{
-                System.out.println("No se pudo realizar el prestamo");
-            }
-        this.cancelar();
+        Boolean b = PrestamoManager.getInstance().prestamo(prestamo.socio,prestamo.libro);
+        if(b){
+           JOptionPane.showMessageDialog(this, "Se realizo la reserva");
+             this.cancelar();
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(this, "No se pudo realizar la reserva");
+       }
+       
+
         }
         else{
             System.out.println("Seleccione libro y/o socio");
@@ -318,17 +322,24 @@ public class PrestamoPrestamosView extends javax.swing.JFrame {
     @Action
     public void enSala() {
         if (!this.txtLibro.getText().isEmpty() && !this.txtDNI.getText().isEmpty()){
-        Prestamo prestamo = new Prestamo();
+         Prestamo prestamo = new Prestamo();
         prestamo.fechaEntrega = new Date();
-        prestamo.reservado = false;
-        prestamo.enSala = true;
         prestamo.libro = ModelLocator.getInstance().libroPrestamo;
         prestamo.socio = ModelLocator.getInstance().socioPrestamo;
-        PrestamoManager.getInstance().saveOrUpdate(prestamo);
-        this.cancelar();
+        Boolean b = PrestamoManager.getInstance().prestamoEnSala(prestamo.socio,prestamo.libro);
+        if(b){
+           JOptionPane.showMessageDialog(this, "Se realizo el prestamo EN SALA");
+             this.cancelar();
+
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(this, "No se pudo realizar el prestamo EN SALA");
+       }
+      
         }
         else{
-            System.out.println("Seleccione libro y/o socio");
+             JOptionPane.showMessageDialog(this,"Seleccione libro y/o socio");
         }
     }
 
@@ -337,16 +348,25 @@ public class PrestamoPrestamosView extends javax.swing.JFrame {
       if (!this.txtLibro.getText().isEmpty() && !this.txtDNI.getText().isEmpty()){
         Prestamo prestamo = new Prestamo();
         prestamo.fechaEntrega = new Date();
-        prestamo.reservado = true;
-        prestamo.enSala = false;
         prestamo.libro = ModelLocator.getInstance().libroPrestamo;
         prestamo.socio = ModelLocator.getInstance().socioPrestamo;
-        PrestamoManager.getInstance().saveOrUpdate(prestamo);
-        this.cancelar();
+        Boolean b = PrestamoManager.getInstance().prestamoReserva(prestamo.socio,prestamo.libro);
+        if(b){
+           JOptionPane.showMessageDialog(this, "Se realizo la reserva");
+             this.cancelar();
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(this, "No se pudo realizar la reserva");
+       }
         }
         else{
-            System.out.println("Seleccione libro y/o socio");
+             JOptionPane.showMessageDialog(this,"Seleccione libro y/o socio");
         }
+        
+       
+      
+      
     }
 
     private JFrame seleccionarLibroView;

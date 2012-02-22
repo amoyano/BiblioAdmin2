@@ -13,6 +13,7 @@ package biblioadmin2;
 
 import com.db4o.ObjectServer;
 import com.db4o.ObjectSet;
+import javax.swing.JOptionPane;
 import managers.LibroManager;
 import models.Libro;
 import org.jdesktop.application.Action;
@@ -221,7 +222,16 @@ public class LibrosNuevoView extends javax.swing.JFrame {
         libro.cantidadEjemplaresDisponibles = 1;
    
          }
-        LibroManager.getInstance().saveOrUpdate(libro);
+       Boolean b = LibroManager.getInstance().saveOrUpdate(libro);
+        
+       if(b){
+           JOptionPane.showMessageDialog(this, "Se agrego el libro");
+
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(this, "No se pudo agregar el libro");
+       } 
     }
 
     @Action

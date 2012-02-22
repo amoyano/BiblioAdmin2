@@ -13,11 +13,7 @@ package biblioadmin2;
 
 import biblioadmin2.renderers.LibroRenderer;
 import com.db4o.ObjectSet;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.LocalAttribute;
-import java.util.Vector;
-import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
-import javax.swing.JList;
 import locators.ModelLocator;
 import managers.LibroManager;
 import models.Libro;

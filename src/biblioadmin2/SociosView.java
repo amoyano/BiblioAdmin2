@@ -117,6 +117,7 @@ public class SociosView extends javax.swing.JFrame {
         rbAlumnoMod = new javax.swing.JRadioButton();
         rbProfesorMod = new javax.swing.JRadioButton();
         jLabel26 = new javax.swing.JLabel();
+        txtEstado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Form"); // NOI18N
@@ -486,9 +487,9 @@ public class SociosView extends javax.swing.JFrame {
                                 .add(txtMateriasMod, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 171, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(pnlDatosBuscarLayout.createSequentialGroup()
                                 .add(jButton4)
-                                .add(18, 18, 18)
+                                .add(27, 27, 27)
                                 .add(btnModificarSocio)
-                                .add(36, 36, 36)
+                                .add(27, 27, 27)
                                 .add(btnEliminarSocio)))
                         .add(51, 51, 51))))
         );
@@ -541,10 +542,14 @@ public class SociosView extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(pnlDatosBuscarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnModificarSocio, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnEliminarSocio, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(btnEliminarSocio, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnModificarSocio, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(154, Short.MAX_VALUE))
         );
+
+        txtEstado.setFont(resourceMap.getFont("txtEstado.font")); // NOI18N
+        txtEstado.setText(resourceMap.getString("txtEstado.text")); // NOI18N
+        txtEstado.setName("txtEstado"); // NOI18N
 
         org.jdesktop.layout.GroupLayout pnlNuevoLayout = new org.jdesktop.layout.GroupLayout(pnlNuevo);
         pnlNuevo.setLayout(pnlNuevoLayout);
@@ -553,28 +558,32 @@ public class SociosView extends javax.swing.JFrame {
             .add(pnlNuevoLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(pnlNuevoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(lblDNI)
-                    .add(jLabel3)
-                    .add(pnlNuevoLayout.createSequentialGroup()
-                        .add(jLabel4)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(lblDNI2)
-                        .add(75, 75, 75)
-                        .add(txtDNIBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(btnBuscarSocio))
-                    .add(jLabel2)
-                    .add(jLabel1)
                     .add(pnlNuevoLayout.createSequentialGroup()
                         .add(pnlNuevoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel7)
-                            .add(jLabel5)
-                            .add(jLabel6)
-                            .add(jLabel8)
-                            .add(jLabel9))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(pnlDatosBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                            .add(lblDNI)
+                            .add(jLabel3)
+                            .add(pnlNuevoLayout.createSequentialGroup()
+                                .add(jLabel4)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(lblDNI2)
+                                .add(75, 75, 75)
+                                .add(txtDNIBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(btnBuscarSocio)
+                                .add(18, 18, 18)
+                                .add(txtEstado))
+                            .add(jLabel1)
+                            .add(pnlNuevoLayout.createSequentialGroup()
+                                .add(pnlNuevoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel7)
+                                    .add(jLabel5)
+                                    .add(jLabel6)
+                                    .add(jLabel8)
+                                    .add(jLabel9))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(pnlDatosBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(69, Short.MAX_VALUE))
+                    .add(jLabel2)))
         );
         pnlNuevoLayout.setVerticalGroup(
             pnlNuevoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -583,7 +592,8 @@ public class SociosView extends javax.swing.JFrame {
                     .add(pnlNuevoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(btnBuscarSocio)
                         .add(lblDNI2)
-                        .add(txtDNIBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(txtDNIBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(txtEstado))
                     .add(pnlNuevoLayout.createSequentialGroup()
                         .add(lblDNI)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -670,7 +680,19 @@ public class SociosView extends javax.swing.JFrame {
 	socioNuevo.tipoSocio = tipoSocioNuevo;
 	socioNuevo.cantidadReservado = 0;
 
-        SocioManager.getInstance().saveOrUpdate(socioNuevo);
+        Boolean b =  SocioManager.getInstance().saveOrUpdate(socioNuevo);
+        
+        if(b){
+           JOptionPane.showMessageDialog(this, "Se agrego el socio");
+
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(this, "No se pudo agregar el socio");
+       }
+       
+        
+        
     }
 
     @Action
@@ -723,6 +745,14 @@ public class SociosView extends javax.swing.JFrame {
              this.cbxLocalidadMod.setSelectedItem(socioModificable.localidad.nombre);
              this.cbxProvinciaMod.setSelectedItem(socioModificable.localidad.provincia.nombre);
              this.txtMateriasMod.setText(socioModificable.tipoSocio.materias);
+             if(!socioModificable.dadoDeBaja)
+                     {
+                        this.txtEstado.setText("ACTIVO");  
+                     }
+             else{
+                 this.txtEstado.setText("ELIMINADO");  
+             }
+                 
             
 
              if(socioModificable.tipoSocio.rol.nombre.equals("Alumno"))
@@ -755,17 +785,24 @@ public class SociosView extends javax.swing.JFrame {
         Socio socioModificable = new Socio();
         socioModificable =  SocioManager.getInstance().buscar(this.txtDNIBuscar.getText());
         eliminado = SocioManager.getInstance().darDeBaja(socioModificable);
-        if(eliminado){
+        int confirmado = JOptionPane.showConfirmDialog(this,"¿Lo confirmas?");
+
+        if (JOptionPane.OK_OPTION == confirmado)
+        {
             JOptionPane.showMessageDialog(null,"EL SOCIO FUE ELIMINADO", "SOCIO ELIMINADO", JOptionPane.INFORMATION_MESSAGE);
-             this.txtNombreMod.setText(null);
+            this.txtDNIBuscar.setText(null); 
+            this.txtNombreMod.setText(null);
              this.txtApellidoMod.setText(null);
              this.txtDireccionMod.setText(null);
              this.txtTelMod.setText(null);
              this.txtEmailMod.setText(null);
              this.txtMateriasMod.setText(null);
-        }
-         else{
-             JOptionPane.showMessageDialog(null,"EL SOCIO NO FUE ELIMINADO", "SOCIO NO ELIMINADO", JOptionPane.WARNING_MESSAGE);
+             this.grpTipoSocioMod.setSelected(null, true);
+       }
+            else
+        {
+              JOptionPane.showMessageDialog(null,"EL SOCIO NO FUE ELIMINADO", "SOCIO NO ELIMINADO", JOptionPane.WARNING_MESSAGE);
+              
          }
         
     }
@@ -798,7 +835,15 @@ public class SociosView extends javax.swing.JFrame {
 	socioModificable.tipoSocio = tipoSocioNuevo;
 	
 
-        SocioManager.getInstance().saveOrUpdate(socioModificable);
+       Boolean b =  SocioManager.getInstance().saveOrUpdate(socioModificable);
+       if(b){
+           JOptionPane.showMessageDialog(this, "Se modifico el socio");
+
+       }
+       else
+       {
+            JOptionPane.showMessageDialog(this, "No se pudo modificar el socio");
+       }
     }
 
     @Action
@@ -809,6 +854,7 @@ public class SociosView extends javax.swing.JFrame {
              this.txtTelefonoSocio.setText(null);
              this.txtEmailSocio.setText(null);
              this.txtMaterias.setText(null);
+             this.grpTipoSocio.setSelected(null, rootPaneCheckingEnabled);
     }
 
     private Boolean existeSocio;
@@ -876,6 +922,7 @@ public class SociosView extends javax.swing.JFrame {
     private javax.swing.JTextField txtDireccionSocio;
     private javax.swing.JTextField txtEmailMod;
     private javax.swing.JTextField txtEmailSocio;
+    private javax.swing.JLabel txtEstado;
     private javax.swing.JTextArea txtMaterias;
     private javax.swing.JTextField txtMateriasMod;
     private javax.swing.JTextField txtNombreMod;
