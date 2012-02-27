@@ -125,6 +125,7 @@ public class PrestamoManager extends DBManager
                libro.cantidadEjemplaresDisponibles--;
                prestamo.libro = libro;
                prestamo.socio = socio;
+               prestamo.devuelto = false;
                prestamo.fechaEntrega = new Date();
                saveOrUpdate(libro);
                saveOrUpdate(prestamo);
@@ -155,6 +156,7 @@ public class PrestamoManager extends DBManager
                prestamo.enSala = true;
                prestamo.reservado = false;
                prestamo.socio = socio;
+               prestamo.devuelto = false;
                prestamo.fechaEntrega = new Date();
                saveOrUpdate(libro);
                saveOrUpdate(prestamo);
@@ -183,6 +185,7 @@ public class PrestamoManager extends DBManager
                prestamo.enSala = false;
                prestamo.reservado = true;
                prestamo.socio = socio;
+               prestamo.devuelto = false;
                prestamo.fechaEntrega = new Date();
                saveOrUpdate(libro);
                saveOrUpdate(prestamo);
@@ -214,7 +217,7 @@ public class PrestamoManager extends DBManager
                         
 			saveOrUpdate(prestamo);
 			getDB().commit();
-
+                         b = true;
 			//Calendar today = new Date();
                         //int diasTranscurridos;
                       //  diasTranscurridos = today - prestamo.fechaDevolucion;
@@ -232,8 +235,9 @@ public class PrestamoManager extends DBManager
   
 	}
 
-	public void renovarEjemplar(Socio socio, Libro libro)
+	public Boolean renovarEjemplar(Socio socio, Libro libro)
 	{
+            Boolean b =false;
 		try
 		{
 			Prestamo p = buscar(socio, libro);
@@ -249,6 +253,7 @@ public class PrestamoManager extends DBManager
 				p.fechaDevolucion = fechaDevolucionCalendar.getTime();
 				saveOrUpdate(p);
 				getDB().commit();
+                                b=true;
 			}
 		}
 		catch (Exception e)
@@ -256,6 +261,7 @@ public class PrestamoManager extends DBManager
 			e.printStackTrace();
 			getDB().rollback();
 		}
+                return b;
               
 	}
 

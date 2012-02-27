@@ -15,6 +15,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Date;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import locators.ModelLocator;
 import managers.PrestamoManager;
 import models.Prestamo;
@@ -68,6 +69,7 @@ public class PrestamoDevolucionView extends javax.swing.JFrame {
         jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
         jButton1.setName("jButton1"); // NOI18N
 
+        jButton2.setAction(actionMap.get("renovarEjemplar")); // NOI18N
         jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
         jButton2.setName("jButton2"); // NOI18N
 
@@ -282,17 +284,42 @@ public class PrestamoDevolucionView extends javax.swing.JFrame {
         prestamo.socio = ModelLocator.getInstance().socioPrestamo;
         Boolean devolucion = PrestamoManager.getInstance().devolverEjemplar(prestamo.socio, prestamo.libro);
             if(devolucion){
-                System.out.println("La devolucion se realizo correctamente");
+                JOptionPane.showMessageDialog(this, "La devolucion se realizo correctamente");
+                this.cancelar();
+              
             }
             else{
-                System.out.println("No se pudo realizar la devolucion");
+                 JOptionPane.showMessageDialog(this, "No se pudo realizar la devolucion");
             }
         this.cancelar();
         }
         else{
-            System.out.println("Seleccione libro y/o socio");
+            JOptionPane.showMessageDialog(this, "Seleccione libro y/o socio");
         }
         
+    }
+
+    @Action
+    public void renovarEjemplar() {
+        if (!this.txtLibro.getText().isEmpty() && !this.txtDNI.getText().isEmpty()){
+        Prestamo prestamo = new Prestamo();
+        prestamo.libro = ModelLocator.getInstance().libroPrestamo;
+        prestamo.socio = ModelLocator.getInstance().socioPrestamo;
+        prestamo.renovado = true;
+        Boolean b = PrestamoManager.getInstance().renovarEjemplar(prestamo.socio, prestamo.libro);
+            if(b){
+                JOptionPane.showMessageDialog(this, "La renovacion se realizo correctamente");
+                this.cancelar();
+              
+            }
+            else{
+                 JOptionPane.showMessageDialog(this, "No se pudo realizar la renovacion");
+            }
+        this.cancelar();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Seleccione libro y/o socio");
+        }
     }
 
     private JFrame seleccionarLibroView;

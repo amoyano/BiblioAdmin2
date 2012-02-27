@@ -9,6 +9,7 @@ public class Prestamo
 	public Boolean devuelto;
 	public Boolean reservado;
 	public Boolean enSala;
+        public Boolean renovado;
 	// La fecha en que se le entrega el ejemplar al socio.
 	public Date fechaEntrega;
 	// La fecha en que el socio debe devolver el ejemplar.

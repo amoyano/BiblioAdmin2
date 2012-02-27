@@ -291,12 +291,12 @@ public class PrestamoPrestamosView extends javax.swing.JFrame {
         prestamo.socio = ModelLocator.getInstance().socioPrestamo;
         Boolean b = PrestamoManager.getInstance().prestamo(prestamo.socio,prestamo.libro);
         if(b){
-           JOptionPane.showMessageDialog(this, "Se realizo la reserva");
+           JOptionPane.showMessageDialog(this, "Se realizo el prestamo");
              this.cancelar();
        }
        else
        {
-            JOptionPane.showMessageDialog(this, "No se pudo realizar la reserva");
+            JOptionPane.showMessageDialog(this, "No se pudo realizar la prestamo");
        }
        
 
